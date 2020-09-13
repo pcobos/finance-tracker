@@ -1,3 +1,13 @@
 <h1>My Portfolio</h1>
-
 <p>Make money money money, make money money money...</p>
+
+<div class="search-form">
+  <h3>Search stocks</h3>
+  <%= form_tag '#', method: :get do %>
+    <div class="form-group">
+      <%= label_tag :stock, "Search for stock"  %>
+      <%= text_field_tag :stock %>
+      <%= submit_tag "Search" %>
+    </div>
+  <% end %>
+</div>
