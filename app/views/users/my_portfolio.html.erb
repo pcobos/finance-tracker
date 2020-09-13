@@ -4,10 +4,13 @@
 <div class="search-form">
   <h3>Search stocks</h3>
   <%= form_tag '#', method: :get do %>
-    <div class="form-group">
-      <%= label_tag :stock, "Search for stock"  %>
-      <%= text_field_tag :stock %>
-      <%= submit_tag "Search" %>
+    <div class="form-group row">
+      <div class="col-6">
+        <%= text_field_tag :stock, params[:stock], placeholder:"Ticker Symbol", autofocus: true, class: "form-control form-control-lg" %>
+      </div>
+      <div class="col-3">
+        <%= submit_tag "Search", class: "btn btn-succes btn-lg" %>
+      </div>
     </div>
   <% end %>
 </div>
