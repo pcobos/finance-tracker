@@ -9,7 +9,9 @@
         <%= text_field_tag :stock, params[:stock], placeholder:"Ticker Symbol", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-3">
-        <%= submit_tag "Search", class: "btn btn-succes btn-lg" %>
+        <%= button_tag type: :submit, class: "btn btn-success btn-lg" do %>
+          <%= fa_icon 'search' %>
+        <% end %>
       </div>
     </div>
   <% end %>
