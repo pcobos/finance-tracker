@@ -16,3 +16,10 @@
     </div>
   <% end %>
 </div>
+<% if @stock %>
+  <div class="card card-header">
+    <span>Symbol:</span> <%= stock.ticker %>
+    <span>Name:</span> <%= stock.name %>
+    <span>Last Price:</span> <%= stock.last_price %>
+  </div>
+<% end %>
