@@ -5,7 +5,10 @@ class StocksController < ApplicationController
       @stock = Stock.new_lookup(params[:stock])
       # byebug
       if @stock
-        render 'users/my_portfolio'
+        # The following method accepts a block and expects a js.erb partial
+        respond_to do |format|
+          format.js { render partial: 'users/stocks' }
+        end
       else
         flash[:alert] =  "Please enter a valid Symbol"
         redirect_to my_portfolio_path
