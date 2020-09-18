@@ -1,4 +1,5 @@
 class Stock < ApplicationRecord
+belongs_to: :user
 
   def self.new_lookup(ticker_symbol)
     client = IEX::Api::Client.new(
