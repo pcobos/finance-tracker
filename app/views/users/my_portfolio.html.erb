@@ -31,7 +31,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= @tracked_stocks.each do |stock| %>
+        <% @tracked_stocks.each do |stock| %>
           <tr>
             <th scope="row"><%= stock.ticker %></th>
             <td><%= stock.name %></td>
