@@ -31,12 +31,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
+        <%= @tracked_stocks.each do |stock| %>
+          <tr>
+            <th scope="row"><%= stock.ticker %></th>
+            <td><%= stock.name %></td>
+            <td><%= stock.last_price  %></td>
+            <td><%= 'Placeholder Actions' %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
