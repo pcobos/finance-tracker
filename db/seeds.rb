@@ -8,13 +8,15 @@
 require 'faker'
 
 puts "> Clearing Database..."
+User.destroy_all
 puts "> Creating new users..."
 
 10.times do 
-  User.new(
+  user = User.new(
     email: Faker::Internet.email,
-    encrypted_password: 123456
+    password: 123456
   )
+  user.save
 end
 
 puts "> Done!"
