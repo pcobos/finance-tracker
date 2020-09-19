@@ -16,3 +16,5 @@ puts "> Creating new users..."
     encrypted_password: 123456
   )
 end
+
+puts "> Done!"
