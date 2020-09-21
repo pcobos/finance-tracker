@@ -8,7 +8,7 @@
   
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item <% 'active' if request.path == my_portfolio_path  %>">
             <%= link_to 'Home', my_portfolio_path, class:'nav-link' %>
           </li>
         </ul>
