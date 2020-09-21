@@ -1,29 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Finance Tracker</a>
-    <button class="navbar-toggler" type="button"    aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%= link_to "Finance Tracker", root_path, class: "navbar-brand" %>
+    <% if user_signed_in? %>
+      <button class="navbar-toggler" type="button"    aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Portfolio', my_portfolio_path, class:'nav-link' %>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to 'Home', my_portfolio_path, class:'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+    
+      <%# <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
-      </form>
-      <% if user_signed_in? %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %>
-      <% else %>
-        <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary mr-sm-2" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-primary" %>
-      <% end %>
-    </div>
+      </form> %>
+      <div class="ml-auto">
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary mr-sm-2" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-primary" %>
+        <% end %>
+      </div>
   </div>
 </nav>
