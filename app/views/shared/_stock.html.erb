@@ -8,6 +8,6 @@
     <span>Name:</span> <%= @stock.name %>
     <span>Last Price:</span> <%= @stock.last_price %>
     <%# Following link_to adds a stock to the user's portfolio. It requires the create route and the method which in this case is post given that we are sending info to the DB. Note that the route requires two arguments that will be passed (user_id and ticker)%>
-    <%= link_to "ADD TO PORTFOLIO", user_stocks_path, class: "btn btn-success", method: :post %>
+    <%= link_to "ADD TO PORTFOLIO", user_stocks_path, class: "btn btn-success ml-2", method: :post %>
   </div>
 <% end %>
