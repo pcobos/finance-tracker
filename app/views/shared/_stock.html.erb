@@ -7,7 +7,7 @@
     <span>Symbol:</span> <%= @stock.ticker %>
     <span>Name:</span> <%= @stock.name %>
     <span>Last Price:</span> <%= @stock.last_price %>
-    <%# Following link_to adds a stock to the user's portfolio. It requires the create route and the method which in this case is post given that we are sending info to the DB. Note that the route requires two arguments that will be passed (user_id and ticker)%>
-    <%= link_to "ADD TO PORTFOLIO", user_stocks_path, class: "btn btn-success ml-2", method: :post %>
+    <%# Following link_to adds a stock to the user's portfolio. It requires the create route and the method which in this case is post given that we are sending info to the DB. Note that the route requires two arguments that will be passed (user_id and ticker). The ticker will help us check if the stock already exists and if not, we can create it%>
+    <%= link_to "ADD TO PORTFOLIO", user_stocks_path( user: current_user, ticker: @stock.ticker), class: "btn btn-xs btn-success ml-2", method: :post %>
   </div>
 <% end %>
