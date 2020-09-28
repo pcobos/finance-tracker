@@ -12,7 +12,7 @@ class UserStocksController < ApplicationController
   end
 
   def destroy
-      
+    
   end
 end
 
