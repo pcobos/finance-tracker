@@ -8,6 +8,18 @@
     <span>Name:</span> <%= @stock.name %>
     <span>Last Price:</span> <%= @stock.last_price %>
     <%# Following link_to adds a stock to the user's portfolio. It requires the create route and the method which in this case is post given that we are sending info to the DB. Note that the route requires two arguments that will be passed (user_id and ticker). The ticker will help us check if the stock already exists and if not, we can create it%>
-    <%= link_to "ADD TO PORTFOLIO", user_stocks_path( user: current_user, ticker: @stock.ticker), class: "btn btn-xs btn-success ml-2", method: :post %>
+    <% if current_user.can_track_stock?(@stock.ticker) %>
+      <%= link_to "ADD TO PORTFOLIO", user_stocks_path( user: current_user, ticker: @stock.ticker), class: "btn btn-xs btn-success ml-2", method: :post %>
+    <% else %>
+      <span class="badge badge-warning ml-1">
+        You are already tracking
+        <% if !current_user.tracking_limit_exceeded? %>
+          10 stocks
+        <% end %> 
+        <% if current_user.already_tracking?(@stock.ticker)%>
+          this stock
+        <% end %>
+      </span>
+    <% end %>
   </div>
 <% end %>
