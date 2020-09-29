@@ -16,6 +16,7 @@
             <td><%= stock.name %></td>
             <td><%= stock.last_price  %></td>
             <td><%= 'Placeholder Actions' %></td>
+            <%= link_to "Stop Tracking", user_stocks_path, method: :delete %>
           </tr>
         <% end %>
       </tbody>
