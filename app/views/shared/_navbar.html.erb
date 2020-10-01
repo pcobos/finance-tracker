@@ -19,6 +19,7 @@
         <% if user_signed_in? %>
         <ul class="navbar-nav">
           <li class="nav-item user-name">
+            <%= fa_icon 'user', class: "mr-1" %> 
             <%= current_user.full_name %>
           </li>
         </ul>
