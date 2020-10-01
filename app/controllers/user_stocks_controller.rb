@@ -12,8 +12,12 @@ class UserStocksController < ApplicationController
   end
 
   def destroy
-    
+    @user_stock = UserStock.find(params[:id])
+    @user_stock.destroy
+
+    redirect_to my_portfolio_path
   end
+
 end
 
 # else
