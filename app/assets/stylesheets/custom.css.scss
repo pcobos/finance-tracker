@@ -27,3 +27,11 @@
   padding: 8px;
   margin-right: 4px;
 }
+
+.drop-box, .dropdown-item {
+  background-color: #454d55;
+}
+
+#navbarSupportedContent > ul > li.nav-item.dropdown.show > div > a {
+  background-color: #454d55;
+}
