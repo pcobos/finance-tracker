@@ -8,8 +8,9 @@
   
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" aria-labelledby="navbarDropdown" role="button"><%= link_to 'Edit', my_portfolio_path, class:'nav-link' %></li>
           <li class="nav-item <% 'active' if request.path == my_portfolio_path  %>">
-            <%= link_to 'Home', my_portfolio_path, class:'nav-link' %>
+            <%= link_to 'My Portfolio', my_portfolio_path, class:'nav-link' %>
           </li>
         </ul>
       </div>
