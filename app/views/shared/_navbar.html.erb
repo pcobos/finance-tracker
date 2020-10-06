@@ -13,7 +13,9 @@
           Profile
         </a>
           <div class="dropdown-menu drop-box" aria-labelledby="navbarDropdown">
-            <%= link_to 'Edit', edit_user_registration_path, class:'nav-link dropdown-item' %>
+            <%= link_to edit_user_registration_path, class:'nav-link dropdown-item' do %>
+              <%= fa_icon 'edit' %> Edit profile
+            <% end %>
           </div>
         </li>
         <li class="nav-item <% 'active' if request.path == my_portfolio_path  %>">
