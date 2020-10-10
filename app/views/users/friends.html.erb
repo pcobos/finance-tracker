@@ -1,32 +1,6 @@
 <h1>My Friend$</h1>
 <p>Friends are like money, always there when you need them!</p>
 
-<% @friends.each do |friend| %>
-  <h2><%= friend.first_name %></h2>
+<% if !@friends.empty? %>
+  <%= render 'user_friends/list' %>
 <% end %>
-
-<div class="row">
-  <div class="col-8">
-    <table class="table table-hover table-dark">
-      <thead>
-        <tr>
-          <th scope="col">Email</th>
-          <th scope="col">Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @friends.each do |friend| %>
-          <tr>
-            <th scope="row"><%= friend.email %></th>
-            <td><%= friend.first_name %></td>
-            <td><%= friend.last_name  %></td>
-            <td><%= 'Placeholder Actions' %></td>
-            <%# <td><%= link_to "Remove", friends(friend), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-warning" %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
