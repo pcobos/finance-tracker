@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def friends
-    @friens = current_user.friends
+    @friends = current_user.friends
   end 
 end
