@@ -8,6 +8,12 @@ class UsersController < ApplicationController
   end 
 
   def search
-    @user = User.where(params[:email])
+    if params[:friend].present?
+      @friend = User.where(params[:email, :first_name])
+    else
+      respond_to do |format|
+        flash.now[:alert] = "Please enter an email or a name"
+      end
+    end
   end
 end
