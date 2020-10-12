@@ -3,10 +3,10 @@
 
 <div class="search-form">
   <h3>Find your friends</h3>
-  <%= form_tag search_stock_path, remote: true, method: :get do %>
+  <%= form_tag search_friend_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-6 no-right-padding">
-        <%= text_field_tag :stock, params[:stock], placeholder:"Ticker Symbol", autofocus: true, class: "form-control form-control-lg" %>
+        <%= text_field_tag :users, params[:users], placeholder:"User email", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-3 no-left-padding">
         <%= button_tag type: :submit, class: "btn btn-success" do %>
