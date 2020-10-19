@@ -6,7 +6,7 @@
   <%= form_tag search_friend_path, remote: true, method: :get do %>
     <div class="form-group row">
       <div class="col-6 no-right-padding">
-        <%= text_field_tag :users, params[:users], placeholder:"User email", autofocus: true, class: "form-control form-control-lg" %>
+        <%= text_field_tag :friend, params[:friend], placeholder:"User email", autofocus: true, class: "form-control form-control-lg" %>
       </div>
       <div class="col-3 no-left-padding">
         <%= button_tag type: :submit, class: "btn btn-success" do %>
@@ -17,6 +17,7 @@
   <% end %>
 </div>
 
+<%# Following lines display the friends list only if the user has friends %>
 <% if !@friends.empty? %>
   <%= render 'user_friends/list' %>
 <% end %>

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def search
     if params[:friend].present?
-      @friend = params[:friend]
+      @friend = User.where(params[:friend])
     end
   end
 end
