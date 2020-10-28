@@ -3,7 +3,6 @@ class StocksController < ApplicationController
   def search
     if params[:stock].present?
       @stock = Stock.new_lookup(params[:stock])
-      # byebug
       if @stock
         # The following method accepts a block and expects a js.erb partial
         respond_to do |format|
