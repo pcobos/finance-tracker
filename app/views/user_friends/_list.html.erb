@@ -16,7 +16,7 @@
             <td><%= friend.first_name %></td>
             <td><%= friend.last_name  %></td>
             <%# <td><%= 'Placeholder Actions' %>
-            <td><%= link_to "Stop Following", "", method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-warning" %> </td>
+            <td><%= link_to "Stop Following", friendship_path(friend), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-warning" %> </td>
           </tr>
         <% end %>
       </tbody>
