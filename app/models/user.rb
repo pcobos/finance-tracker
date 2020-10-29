@@ -30,4 +30,9 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}" if first_name || last_name
     "Anonymous Mofo"
   end
+
+  def self.matches(field_name, param)
+    # When defining class level methods, we can omit the class name (User in this case)
+    where("#{field_name} like ?", "#{param}")
+  end
 end
