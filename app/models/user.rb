@@ -31,8 +31,32 @@ class User < ApplicationRecord
     "Anonymous Mofo"
   end
 
+  # Following methods query the db to look for matches on first_name, last_name or email
+
+  def self.search(param)
+    # first we strip whatever is passed to eliminate extra spaces
+    param.strip!
+    # Next store the concatenated methods in a variable. Notice that we called the #uniq method on it to make sure that the value is not repeated when performing the query
+    to_send_back = (first_name_match(param) + last_name_match(param) + email_match(param)).uniq
+    return nil unless to_send_back
+    to_send_back
+    # raise
+  end
+
+  def self.first_name_match(param)
+    matches('first_name', param)
+  end
+  
+  def self.last_name_match(param)
+    matches('last_name', param)
+  end
+
+  def self.email_match(param)
+    matches('email', param)
+  end
+
   def self.matches(field_name, param)
     # When defining class level methods, we can omit the class name (User in this case)
-    where("#{field_name} like ?", "#{param}")
+    where("#{field_name} like ?", "%#{param}%")
   end
 end
