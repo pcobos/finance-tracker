@@ -2,11 +2,14 @@
   <%= render 'shared/messages' %>
 </div>
 
-<% if @friend %>
+<% if @friends %>
   <div class="card card-header stock-block main-stock-block">
-    <span>Email:</span><%= @friend.email %>
-    <span>First Name:</span><%= @friend.first_name %>
-    <span>Last Name:</span><%= @friend.last_name %>
-    <%= link_to 'Follow friend', friendships_path(friend: @friend.id), class: "btn btn-xs btn-success ml-2", method: :post %>
+    <% @friends.each do |friend| %>
+      <span>Name: </span><%= friend.full_name %>
+      <span>Email: </span><%= friend.email %>
+      <span>Actions: </span><%= friend.last_name %>
+      <%= link_to 'Visit Profile', '#', class: 'btn btn-xs btn-success ml-2' %>
+      <%= link_to 'Follow friend', friendships_path(friend:   friend.id), class: 'btn btn-xs btn-success ml-2', method: :post %>
+    <% end %>
   </div>
 <% end %>

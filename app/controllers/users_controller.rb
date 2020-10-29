@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     # byebug
     # render json: @friend
     if params[:friend].present?
-      @friend = User.where(email: params[:friend]).first
-      if @friend
+      @friends = User.search(params[:friend])
+      if @friends
         respond_to do |format|
           format.js { render partial: 'users/friends' }
         end
