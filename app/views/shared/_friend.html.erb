@@ -7,6 +7,7 @@
       <table>
     <% @friends.each do |friend| %>
     <tbody>
+      <% if friend != current_user %>
         <tr>
           <td class="mr-2">
             <span>Name: </span><%= friend.full_name %>
@@ -22,12 +23,13 @@
           </td>
             <td class="mr-2">
           <% if current_user.not_friends_with?(friend.id) %>
-              <%= link_to 'Follow friend', friendships_path(friend: friend.id), class: 'btn btn-xs btn-success ml-2', method: :post %>
+              <%= link_to 'Follow friend', friendships_path(friend: friend), class: 'btn btn-xs btn-success ml-2', method: :post %>
           <% else %>
             <span class="badge badge-secondary">You are friends already</span>
           <% end %>
             </td>
         </tr>
+      <% end %>
     </tbody>
     <% end %>
       </table>
