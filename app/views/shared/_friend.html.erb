@@ -20,9 +20,13 @@
           <td class="mr-2">
             <%= link_to 'Visit Profile', '#', class: 'btn btn-xs  btn-success ml-2' %>
           </td>
-          <td class="mr-2">
-            <%= link_to 'Follow friend', friendships_path(friend: friend.id), class: 'btn btn-xs btn-success ml-2', method: :post %>
-          </td>
+            <td class="mr-2">
+          <% if current_user.not_friends_with?(friend.id) %>
+              <%= link_to 'Follow friend', friendships_path(friend: friend.id), class: 'btn btn-xs btn-success ml-2', method: :post %>
+          <% else %>
+            <span class="badge badge-secondary">You are friends already</span>
+          <% end %>
+            </td>
         </tr>
     </tbody>
     <% end %>

@@ -59,4 +59,9 @@ class User < ApplicationRecord
     # When defining class level methods, we can omit the class name (User in this case)
     where("#{field_name} like ?", "%#{param}%")
   end
+
+  def not_friends_with?(friend_id)
+    !self.friends.where(id: friend_id).exists?
+  end
+  
 end
