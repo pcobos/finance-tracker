@@ -4,12 +4,28 @@
 
 <% if @friends %>
   <div class="card card-header stock-block main-stock-block">
+      <table>
     <% @friends.each do |friend| %>
-      <span>Name: </span><%= friend.full_name %>
-      <span>Email: </span><%= friend.email %>
-      <span>Actions: </span><%= friend.last_name %>
-      <%= link_to 'Visit Profile', '#', class: 'btn btn-xs btn-success ml-2' %>
-      <%= link_to 'Follow friend', friendships_path(friend:   friend.id), class: 'btn btn-xs btn-success ml-2', method: :post %>
+    <tbody>
+        <tr>
+          <td class="mr-2">
+            <span>Name: </span><%= friend.full_name %>
+          </td>
+          <td class="mr-2">
+            <span> Email: </span><%= friend.email %>
+          </td>
+          <td class="mr-2">
+            <span> Actions: </span>
+          </td>
+          <td class="mr-2">
+            <%= link_to 'Visit Profile', '#', class: 'btn btn-xs  btn-success ml-2' %>
+          </td>
+          <td class="mr-2">
+            <%= link_to 'Follow friend', friendships_path(friend: friend.id), class: 'btn btn-xs btn-success ml-2', method: :post %>
+          </td>
+        </tr>
+    </tbody>
     <% end %>
+      </table>
   </div>
 <% end %>
