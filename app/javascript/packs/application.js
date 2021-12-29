@@ -17,3 +17,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// window.$crisp=[];window.CRISP_WEBSITE_ID="e93e073a-1f69-4cbc-8934-f9e1611e65bb";
+// (function(){
+//   d=document;s=d.createElement("script");
+//   s.src="https://client.crisp.chat/l.js";
+//   s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+
+window.$crisp.push(["set", "message:text", ["Hi! I'd like to get help."]]);
