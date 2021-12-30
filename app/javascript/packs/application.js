@@ -24,4 +24,4 @@ require("channels")
 //   s.src="https://client.crisp.chat/l.js";
 //   s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 
-window.$crisp.push(["set", "message:text", ["Hi! I'd like to get help."]]);
+

@@ -1,5 +1,5 @@
 require 'rubygems'
-require './zapier_ruby'
+require 'zapier_ruby'
 
 class User < ApplicationRecord
   after_create :zap_new_user
@@ -70,8 +70,6 @@ class User < ApplicationRecord
   end
 
   def zap_new_user
-  
-
     ZapierRuby.configure do |c|
      c.web_hooks = {user_zap: "b1f6mz4"}
      c.enable_logging = false
@@ -81,8 +79,8 @@ class User < ApplicationRecord
     zapper = ZapierRuby::Zapper.new(:user_zap)
     
     if zapper.zap({
-      nickname: "#{current_user.first_name} #{current_user.last_name}", 
-      email: current_user.email
+      nickname: self.full_name, 
+      email: self.email
       })
       puts "zapped it"
     else
