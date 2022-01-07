@@ -2,14 +2,14 @@ require 'rubygems'
 require 'zapier_ruby'
 
 ZapierRuby.configure do |c|
- c.web_hooks = {example_zap: "b1f6mz4"}
+ c.web_hooks = {example_zap: "b9yz5m5"}
  c.enable_logging = false
- c.account_id = "11454267"
+ c.account_id = "11614338"
 end
 
 zapper = ZapierRuby::Zapper.new(:example_zap)
 
-if zapper.zap({name: "whisker", email: "test@test.com"})
+if zapper.zap({name: "Mr. Whiskers", email: "whisker@test.com"})
   puts "zapped it"
 else
   puts "it remains unzapped"

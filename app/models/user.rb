@@ -71,9 +71,9 @@ class User < ApplicationRecord
 
   def zap_new_user
     ZapierRuby.configure do |c|
-     c.web_hooks = {user_zap: "b1f6mz4"}
+     c.web_hooks = {user_zap: "b9yz5m5"}
      c.enable_logging = false
-     c.account_id = "11454267"
+     c.account_id = "11614338"
     end
     
     zapper = ZapierRuby::Zapper.new(:user_zap)
